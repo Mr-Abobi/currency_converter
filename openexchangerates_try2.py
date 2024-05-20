@@ -1,3 +1,30 @@
+# import importlib
+# import datetime
+
+# def install_packages():
+#     try:
+#         importlib.import_module('openexchangerates')
+#     except ImportError:
+#         print("Библиотека 'openexchangerates' не найдена. Устанавливаю...")
+#         import os
+#         os.system('pip install openexchangerates')
+
+# def main():
+#     install_packages()
+    
+#     from openexchangerates import OpenExchangeRates
+#     import requests
+
+#     c = OpenExchangeRates()
+
+#     usd_amount = 100.0
+#     converted_amount = c.convert('USD', 'RUB', usd_amount)
+
+#     print(f"{usd_amount} USD is equal to {converted_amount} RUB.")
+
+# if __name__ == "__main__":
+#     main()
+
 import importlib
 import datetime
 
