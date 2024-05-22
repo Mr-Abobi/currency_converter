@@ -27,9 +27,17 @@ def perform_conversion():
     result = convert_currency(base_currency, amount, target_currency, api_key)
 
     if isinstance(result, float):
-        messagebox.showinfo('Результат конвертации', f'{amount} {base_currency} равно {result} {target_currency}')
+        result_text = f'{amount} {base_currency} равно {result} {target_currency}'
+        messagebox.showinfo('Результат конвертации', result_text)
+
+        save_to_file(result_text)
     else:
         messagebox.showerror('Ошибка', result)
+
+def save_to_file(result):
+    with open('conversion_result.txt', 'w') as file:
+        file.write(result + '\n')
+    messagebox.showinfo('Успех', 'Результат успешно сохранен в файле conversion_result.txt')
 
 api_key = 'b9e54f631f2448259723d96659ed9c02'
 
@@ -54,5 +62,8 @@ target_currency_entry.pack()
 
 convert_button = tk.Button(root, text='Конвертировать', command=perform_conversion)
 convert_button.pack()
+
+save_to_file_button = tk.Button(root, text='Вывести в файл', command=perform_conversion)
+save_to_file_button.pack()
 
 root.mainloop()
