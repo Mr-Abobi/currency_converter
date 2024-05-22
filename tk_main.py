@@ -66,6 +66,6 @@ convert_button.pack(pady=10)
 
 
 save_to_file_button = tk.Button(root, text='Вывести в файл', command=perform_conversion)
-save_to_file_button.pack()
+save_to_file_button.pack(pady=10)
 
 root.mainloop()
