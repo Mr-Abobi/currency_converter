@@ -30,7 +30,7 @@ def perform_conversion():
         result_text = f'{amount} {base_currency} равно {result} {target_currency}'
         messagebox.showinfo('Результат конвертации', result_text)
 
-        save_to_file(result_text)
+        save_to_file_button.config(command=lambda: save_to_file(result_text))
     else:
         messagebox.showerror('Ошибка', result)
 
@@ -63,9 +63,7 @@ target_currency_entry.pack()
 convert_button = tk.Button(root, text='Конвертировать', command=perform_conversion)
 convert_button.pack(pady=10)
 
-
-
-save_to_file_button = tk.Button(root, text='Вывести в файл', command=perform_conversion)
+save_to_file_button = tk.Button(root, text='Вывести в файл', command=save_to_file)
 save_to_file_button.pack(pady=10)
 
 root.mainloop()
