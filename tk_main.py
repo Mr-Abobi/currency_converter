@@ -15,7 +15,7 @@ def convert_currency(base_currency, amount, target_currency, api_key):
             converted_amount = float(amount) * float(rate)
             return converted_amount
         else:
-            return 'Ошибка: Некорректный код целевой валюты'
+            return 'Ошибка: Некорректная целевая валюта'
     else:
         return 'Ошибка: Не удалось получить данные от сервера'
 
