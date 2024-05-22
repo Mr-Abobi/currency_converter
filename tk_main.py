@@ -41,7 +41,7 @@ def save_to_file(result):
 
 api_key = 'b9e54f631f2448259723d96659ed9c02'
 
-# Создание графического интерфейса
+
 root = tk.Tk()
 root.title('Конвертер валют')
 
@@ -61,7 +61,9 @@ target_currency_entry = tk.Entry(root)
 target_currency_entry.pack()
 
 convert_button = tk.Button(root, text='Конвертировать', command=perform_conversion)
-convert_button.pack()
+convert_button.pack(pady=10)
+
+
 
 save_to_file_button = tk.Button(root, text='Вывести в файл', command=perform_conversion)
 save_to_file_button.pack()
