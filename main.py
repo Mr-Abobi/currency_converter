@@ -13,14 +13,14 @@ def convert_currency(base_currency, amount, target_currency, api_key):
             converted_amount = float(amount) * float(rate)
             return converted_amount
         else:
-            return f'Ошибка: Некорректный код целевой валюты'
+            return f'Ошибка: Некорректный целевая валюта'
     else:
         return 'Ошибка: Не удалось получить данные от сервера'
 
 api_key = 'b9e54f631f2448259723d96659ed9c02'
 base_currency = input('Введите изначальную валюту: ').upper()
 amount = float(input('Введите количество валюты для конвертации: '))
-target_currency = input('Введите код целевой валюты: ').upper()
+target_currency = input('Введите целевую валюту: ').upper()
 
 result = convert_currency(base_currency, amount, target_currency, api_key)
 if isinstance(result, float):
